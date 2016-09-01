@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{site.name}} - {{site.title}}</title>
+        <meta name="description" content="{{site.description}}">
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="canonical" href="http://example.com/">
+        <link rel="alternate" type="application/rss+xml" title="{{site.name}} - {{site.title}}" href="http://example.com/feed.xml">
+    </head>
+    <body style="background-color: #eee; padding-top: 30px; padding-bottom: 30px">
+        <div class="container" style="padding-top: 30px; 
+                                      padding-bottom: 30px; 
+                                      padding-left: 30px; 
+                                      padding-right: 30px;
+                                      background-color: #fff">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-pills">
+                        <li><a href="/">Início</a></li>
+                        <li><a href="/about">Sobre</a></li>
+                        <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Feed de notícias</a></li>
+                        <li class="disabled"><a>Advertising</a></li>
+                        <li class="disabled"><a><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                        <li class="disabled"><a><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <h3><img src="/images/logo.jpg" width="216px" height="80px"></h3>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <!--
+                <div class="col-sm-12"><p>Aqui vai ter um menu com as metatags dos vários posts</p></div>
+                -->
+            </div>
+            <br>
+            <div class="row"><div class="col-sm-12">{{ content }}</div></div>
+            <br><br><hr>
+            <div class="row">
+                <div class="col-sm-12"><p>Copyright &copy; {{ site.time | date: "%Y" }} - {{site.name}}. 
+                                            Todos os direitos reservados.</p></div>
+            </div>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

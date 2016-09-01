@@ -1,0 +1,15 @@
+{% if paginator.posts.size > 0 %}
+<h3 class="pull-right">Últimas postagens</h3>
+{% for post in (paginator.posts | sort: 'last') %}
+<ul class="nav nav-pills pull-right">
+    <li>
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title | escape }}
+            <span class="badge"> {{ post.date | date: "%d/%m/%Y" }} </span> 
+        </a>
+    </li>
+</ul>
+{% endfor %}
+{% else %}
+<h4 class="pull-right">Não há postagens</h4>
+{% endif %}

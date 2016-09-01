@@ -1,0 +1,23 @@
+{% if paginator.posts.size > 0 %}
+{% for post in (paginator.posts | sort: 'last') %}
+<h2><a href="{{post.url}}">{{post.title | escape}}</a></h2>
+<h2><small>por {{post.author | escape}} em {{post.date | date: "%d/%m/%Y" }}</small></h2>
+{{ post.excerpt }}
+{% endfor %}
+<hr>
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Anterior</a>
+  {% else %}
+    <span class="previous">Anterior</span>
+  {% endif %}
+  <span class="page_number ">Página: {{ paginator.page }} de {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Próxima</a>
+  {% else %}
+    <span class="next ">Próxima</span>
+  {% endif %}
+</div>
+{% else %}
+<h3>Não há postagens</h3>
+{% endif %}
